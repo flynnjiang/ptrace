@@ -1,6 +1,6 @@
 # Introduction
 
-**PTrace** is a tracing tool based on **Perfetto**.
+**PTrace** is a tracking tool based on **Perfetto**.
 
 Its implementation references **vperfetto-min**, which provides the following
 components and functions:
@@ -60,7 +60,7 @@ int main(void)
 }
 ```
 
-Note: compile with '-DENABLE_PTRACE'  and link with '-lptrace' .
+Note: compile with `-DENABLE_PTRACE`  and link with `-lptrace` .
 
 ## Single Host Tracking
 
@@ -69,7 +69,7 @@ Note: compile with '-DENABLE_PTRACE'  and link with '-lptrace' .
 3. Start the application to be tracked
 4. Press <CTRL-C> to stop the tracing
 
-# Dual Host Tracking
+## Dual Host Tracking
 
 1. Start `traced` ( and `trace_probes`) on all hosts
 2. On host #1 (as server), run command `ptrace -m server`
