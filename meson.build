@@ -20,7 +20,7 @@ libperfetto = static_library('perfetto',
 )
 
 libperfetto_dep = declare_dependency(
-  include_directories : 'perfetto',
+  include_directories : include_directories('perfetto'),
   link_with : libperfetto,
 )
 
@@ -48,7 +48,7 @@ configure_file(
 
 libptrace_test = executable('libptrace_test',
   'lib/test/main.c',
-  include_directories : 'lib',
+  include_directories : include_directories('lib'),
   link_with : libptrace,
 )
 
