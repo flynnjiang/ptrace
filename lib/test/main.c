@@ -4,25 +4,39 @@
 #define ENABLE_PTRACE
 #include "ptrace.h"
 
-void test(void)
+void func_b(void)
 {
     PTRACE_FUNC();
 
-    printf("test1\n");
+    usleep(500);
+}
+
+void func_c(void)
+{
+    PTRACE_FUNC();
+
+    usleep(1000);
+}
+
+void func_a(unsigned num)
+{
+    PTRACE_FUNC_U32("num", num);
+
+    func_c();
+    usleep(500);
 }
 
 int main(int argc, char *argv[])
 {
-    int i;
-
     PTRACE_INIT();
 
-    test();
+    unsigned i;
+    for (i = 0; i < 10; i++) {
+        PTRACE_SCOPE_I32("main_loop", "i", i);
+        PTRACE_COUNTER_I32("counter_i", i);
 
-    for (i = 0; i < 100; i++) {
-        PTRACE_SCOPE_I32("loop", "i", i);
-        PTRACE_COUNTER_I32("i", i);
-        usleep(1000);
+        func_a(i);
+        func_b();
     }
 
     return 0;
