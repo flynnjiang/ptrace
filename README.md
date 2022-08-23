@@ -67,7 +67,7 @@ Note: compile with `-DENABLE_PTRACE`  and link with `-lptrace` .
 1. Start `traced` ( and `trace_probes`)
 2. Run command: `ptrace`
 3. Start the application to be tracked
-4. Press <CTRL-C> to stop the tracing
+4. Press `CTRL+C` to stop the tracing
 
 ## Dual Host Tracking
 
@@ -76,7 +76,7 @@ Note: compile with `-DENABLE_PTRACE`  and link with `-lptrace` .
 3. On host #2 (as client), run command `ptrace -m client -s <server IP addr>` or
    `ptrace -s <server IP addr>`
 4. Start the application to be tracked on all hosts
-5. Press <CTRL-C> on host #2 (as client) to stop the tracing
+5. Press `CTRL+C` on host #2 (as client) to stop the tracing
 
 # Other
 
