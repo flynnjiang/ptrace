@@ -12,6 +12,11 @@ components and functions:
   - Dual host tracing
 * **ptrace-combine** - For combining two trace files
 
+# Source
+
+This repository lives at https://github.com/flynnjiang/ptrace.
+Other repositories are likely forks, and code found there is not supported.
+
 # Build
 
 1. Install dependencies
