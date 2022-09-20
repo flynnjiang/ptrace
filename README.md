@@ -1,4 +1,6 @@
-# Introduction
+# PTrace - A tracking tool based on Perfetto
+
+## Introduction
 
 **PTrace** is a tracking tool based on **Perfetto**.
 
@@ -12,12 +14,12 @@ components and functions:
   - Dual host tracing
 * **ptrace-combine** - For combining two trace files
 
-# Source
+## Source
 
 This repository lives at https://github.com/flynnjiang/ptrace.
 Other repositories are likely forks, and code found there is not supported.
 
-# Build
+## Build
 
 1. Install dependencies
 
@@ -41,9 +43,9 @@ ninja
 ninja install
 ```
 
-# Usage
+## Usage
 
-## Add trace points
+### Add trace points
 
 ```c
 #include <ptrace.h>
@@ -67,14 +69,14 @@ int main(void)
 
 Note: compile with `-DENABLE_PTRACE`  and link with `-lptrace` .
 
-## Single Host Tracking
+### Single Host Tracking
 
 1. Start `traced` ( and `trace_probes`)
 2. Run command: `ptrace`
 3. Start the application to be tracked
 4. Press `CTRL+C` to stop the tracing
 
-## Dual Host Tracking
+### Dual Host Tracking
 
 1. Start `traced` ( and `trace_probes`) on all hosts
 2. On host #1 (as server), run command `ptrace -m server`
@@ -83,7 +85,7 @@ Note: compile with `-DENABLE_PTRACE`  and link with `-lptrace` .
 4. Start the application to be tracked on all hosts
 5. Press `CTRL+C` on host #2 (as client) to stop the tracing
 
-# Other
+## Other
 
 Base on Perfetto SDK V22.0
 
